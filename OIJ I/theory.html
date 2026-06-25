@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOPS with Java Programming Lab</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    .bug-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff6600;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .bug-button::before {
+      content: "🐞";
+      font-size: 22px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 400px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .popup-header h2 {
+      font-size: 20px;
+      align="center";
+      margin-top: 18px;
+      color: #4a90e2;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 20px;
+      border: none;
+      background: none;
+    }
+
+    .popup img {
+      width: 45px;
+      margin: 10px;
+      display: block;
+    }
+
+    .form-section {
+      margin-top: 10px;
+    }
+
+    .form-section label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-section input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    textarea, input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .close-btn-form {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-bar">
+      <div class="menu-icon" id="menuToggle">&#9776;</div>
+      <div class="logo">
+        <img src="logo.jpg" alt="Virtual Labs Logo" />
+      </div>
+    </div>
+    <div class="orange-line"></div>
+    <h2 align="left" style="color:#4a90e2"><div class="section"><a href="#">Computer Science and Engineering</a> > <a href="/VL---OOPS/index.html">OOPS with Java Programming Lab</a> > <a href="/VL---OOPS/LOE.html">Experiments</a></div></h2>
+    <div class="grey-line"></div>
+  </header>
+
+  <main class="content">
+   <h1 align="center">Operators in Java - I</h1>
+  </main>
+  <p><div class="section">
+    Java operators are special symbols that perform operations on variables and values. They are used to manipulate data and variables in expressions.In this lab you will be studying about the various types of operators.
+ </div> </p>
+ <p><div class="section"><b>Note: </b>Before moving to the types of operators, it's important to know that how we can take input from the users in Java. So, it's possible by using the <b>Scanner</b> class.</div></p>
+ <div class="section">
+    <h2>Scanner Class</h2>
+    <p>The <b>Scanner</b> class is part of the java.util package. It is used to take input from different sources, i.e., to accept user-choice input from keyboard (and other sources). It can be used by importing the class using following syntax:</p>
+    <pre><b>import java.util.Scanner;</b></pre>
+    <p><strong>Program:</strong></p>
+    <pre>
+<b>import java.util.Scanner;</b>
+
+class Test
+{
+    public static void main(String args[])
+    {
+        <b>Scanner sc = new Scanner(System.in);    //for taking input</b> 
+        
+        System.out.print("Enter your age: ");   
+        int age = sc.nextInt();                 <b>//reads a new integer</b>
+        
+        System.out.print("Age: " + age);
+    }
+}
+    </pre>
+<p><strong>Output:</strong></p> 
+    <p>Enter your age: 24 (user's-choice)<br>
+    Age: 24
+</p>
+ </div>
+ <div class="section">
+    <h1>Types of Operators</h1></div>
+  <p><div class="section">They are of the following types :</div></p>
+  <div class="section">
+    <h2>Arithmetic Operators</h2>
+    <p>Arithmetic operators are used to perform basic mathematical operations.
+    <div class="dot">
+    <ul>
+      <li><b>Addition(+) :</b> It is used to perform the addition of two numbers.</li>
+      <li><b>Subtraction(-) :</b> It is used to perfoem the subtraction of two numbers.</li>
+      <li><b>Multiplication(*) :</b> It is used to perform the multiplication of two numbers.</li>
+      <li><b>Division(/) :</b> It is used to divide the first number by the second and return the quotient as output.</li>
+      <li><b>Modulo(%) :</b> It is used to divide the first number by the second and return the remainder as output.</li>
+    </ul></div>
+    </p>
+    <p><strong>Program:</strong></p>
+    <pre>
+class Test
+{
+    public static void main(String args[])
+    {
+        int a=10;
+        int b=5;
+        System.out.println("Addition: " + (a + b));      
+        System.out.println("Subtraction: " + (a - b));  
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b)); 
+        System.out.println("Modulus: " + (a % b));
+    }
+}
+    </pre>
+    <p><strong>Output:</strong></p> 
+    <p>Addition: 15<br>
+Subtraction: 5<br>
+Multiplication: 50<br>
+Division: 2<br>
+Modulus: 0
+</p>
+  </div>
+
+  <div class="section">
+    <h2>Relational Operators</h2>
+    <p>Relational operators are used to compare two values.
+     <div class="dot">
+    <ul>
+      <li><b>Equal to(==) :</b> It compares two values and returns true if equal, otherwise false.</li>
+      <li><b>Not equal to(!=) :</b> It compares two values and returns false if equal, otherwise true.</li>
+      <li><b>Greater than(>) :</b> It checks if first value is greater than second then returns true, otherwise false.</li>
+      <li><b>Less than(<) :</b> It checks if first value is less than second then returns true, otherwise false.</li>
+      <li><b>Greater than or equal to(>=) :</b> It checks if the first value is greater than or equal to the second then returns true, otherwise false.</li>
+      <li><b>Less than or equal to(<=) :</b> It checks if the first value is less then or equal to the second then returns true, otherwise false.</li>
+    </ul></div>
+    </p>
+    <p><strong>Program:</strong></p>
+    <pre>
+class Test
+{
+    public static void main(String args[])
+    {
+        int a=20;
+        int b=10;
+        System.out.println(a == b); 
+        System.out.println(a != b);
+        System.out.println(a > b); 
+        System.out.println(a < b);
+        System.out.println(a >= b);
+        System.out.println(a <= b);
+    }
+}
+    </pre>
+    <p><strong>Output:</strong></p>
+    <p>false<br>
+       true<br>
+       true<br>
+       false<br>
+       true<br>
+       false
+</p>
+  </div>
+
+  <div class="section">
+    <h2>Logical Operators</h2>
+    <p>Logical operators are used to combine multiple boolean expressions.
+     <div class="dot">
+    <ul>
+      <li><b>Logical AND(&&) :</b> This operator returns true only if both conditions are true. If either condition is false, then result is false.</li>
+      <li><b>Logical OR(||):</b> This operator returns true if at least one condition is true. It returns false only when both conditions are false.</li>
+      <li><b>Logical NOT(!):</b> It reverses the logical value. If a condition is true, then it becomes false, and if a condition is false then it becomes true.</li>
+    </ul></div>
+    </p>
+    <p><strong>Program:</strong></p>
+    <pre>
+class Test
+{
+    public static void main(String args[])
+    {
+        boolean a = true;
+        boolean b = false;
+        System.out.println(a && b);
+        System.out.println(a || b); 
+        System.out.println(!a);     
+    }
+}
+    </pre>
+    <p><strong>Output:</strong></p>
+    <p>false<br>
+true<br>
+false
+</p>
+  </div>
+
+  <div class="section">
+    <h2>Assignment Operators</h2>
+    <p>Assignment operators are used to assign values to variables.
+     <div class="dot">
+    <ul>
+      <li><b>Simple assignment(=) :</b> It is used to assign a vlue to a variable.</li>
+      <li><b>Add and assign(+=) :</b> It adds the right-hand value to the variable and assigns the result back.</li>
+      <li><b>Subtract and assign(-=) :</b> It subtracts the right-hand value from the variable and assigns the result back.</li>
+      <li><b>Multiply and assign(*=) :</b> It multiplies the variable by the right-hand value and assigns the result back.</li>
+      <li><b>Divide and assign(/=) :</b> It divides the variable by the right-hand value and assigns the result back.</li>
+      <li><b>Modulo and assign(%=) :</b> It stores the remainder of division back into the variable</li>
+    </ul></div>
+    </p>
+    <p><strong>Program:</strong></p>
+    <pre>
+class Test
+{
+    public static void main(String args[])
+    {
+        int a = 10;
+        a += 5;  
+        System.out.println(a);
+        a -= 5;  
+        System.out.println(a);
+        a *= 5;  
+        System.out.println(a);
+        a /= 5;  
+        System.out.println(a);
+        a %= 5;  
+        System.out.println(a);
+    }
+}
+    </pre>
+    <p><strong>Output:</strong></p>
+    <p>15<br>
+10<br>
+50<br>
+50<br>
+0
+</p>
+</div>
+
+  
+    <!-- Modal Menu -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img src="logo.jpg" alt="Logo" class="modal-logo"/>
+        <span class="close-btn" id="closeModal">&times;</span>
+      </div>
+      <ul class="modal-menu">
+        <li><a href=AO.html>Aim</a></li>
+        <li><a href=theory.html class="active">Theory</a></li>
+        <li><a href=quiz.html>Pretest</a></li>
+        <li><a href=pro.html>Procedure</a></li>
+        <li><a href=sim.html>Simulation</a></li>
+        <li><a href="postt.html">Posttest</a></li>
+        <li><a href=ref.html>References</a></li>
+        <li><a href=feed2.html>Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+   <script src="script.js"></script>
+   <button class="bug-button" onclick="showPopup()"></button>
+
+<div class="popup" id="bugPopup">
+  <div class="popup-header">
+    <img src="VL.jpg" align="left" alt="Bug Icon">
+    <h2>Bug Report</h2>
+    <button class="close-btn" onclick="hidePopup()">×</button>
+  </div>
+  <div class="form-section">
+    <label><p><big><big>Please select the Issues<br></big></big><input type="checkbox">Incorrect Options<br>
+    <input type="checkbox">Incorrect Answer<br>
+    <input type="checkbox">Incorrect Question<br>
+    <input type="checkbox">Page Not Loading<br>
+    <input type="checkbox">Content Not Visible<br>
+    <input type="checkbox">Incorrect Content<br></p></label>
+  </div>
+   <p><big>Please describe your issue</big><br><textarea rows="4" placeholder="Enter description here"></textarea></p>
+  <label><p><big>Please enter your email (Optional)<br></big><input type="email" placeholder="Enter email here for communication (Optional)"></p></label>
+  <div class="buttons">
+    <button class="close-btn-form" onclick="hidePopup()">Close</button>
+    <button class="submit-btn">Submit</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById('bugPopup').style.display = 'block';
+  }
+
+  function hidePopup() {
+    document.getElementById('bugPopup').style.display = 'none';
+  }
+</script>
+</body>
+</html>

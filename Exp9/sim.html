@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Structure Simulation</title>
+
+<style>
+body{
+  font-family:Segoe UI;
+  margin:0;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+}
+
+header{
+  background:#1e293b;
+  padding:15px;
+  font-size:22px;
+  color:#38bdf8;
+  font-weight:bold;
+}
+
+.container{
+  padding:20px;
+}
+
+input{
+  padding:10px;
+  margin:8px;
+  border:none;
+  border-radius:6px;
+  width:200px;
+}
+
+button{
+  padding:10px 15px;
+  background:#38bdf8;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:6px;
+}
+
+button:hover{
+  background:#0ea5e9;
+}
+
+.card{
+  margin-top:20px;
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+  width:300px;
+  margin-left:auto;
+  margin-right:auto;
+  border:1px solid #334155;
+  text-align:left;
+}
+
+.card h3{
+  color:#22c55e;
+}
+
+.label{
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+📘 Student Structure Storage Simulation (C Language Concept)
+</header>
+
+<div class="container">
+
+<input type="text" id="name" placeholder="Enter Name"><br>
+<input type="number" id="roll" placeholder="Enter Roll No"><br>
+<input type="text" id="branch" placeholder="Enter Branch"><br>
+
+<button onclick="storeStudent()">Store Student</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
+
+function storeStudent(){
+
+  // "structure" like object in JS
+  let student = {
+    name: document.getElementById("name").value,
+    roll: document.getElementById("roll").value,
+    branch: document.getElementById("branch").value
+  };
+
+  let output = `
+    <div class="card">
+      <h3>📌 Student Record</h3>
+      <p><span class="label">Name:</span> ${student.name}</p>
+      <p><span class="label">Roll No:</span> ${student.roll}</p>
+      <p><span class="label">Branch:</span> ${student.branch}</p>
+    </div>
+  `;
+
+  document.getElementById("output").innerHTML = output;
+}
+
+</script>
+
+</body>
+</html>

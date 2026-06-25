@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOPS with Java Programming Lab</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    .bug-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff6600;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .bug-button::before {
+      content: "🐞";
+      font-size: 22px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 400px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 1000;
+      padding: 16px;
+    }
+
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .popup-header h2 {
+      font-size: 20px;
+      align="center";
+      margin-top: 18px;
+      color: #4a90e2;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 20px;
+      border: none;
+      background: none;
+    }
+
+    .popup img {
+      width: 45px;
+      margin: 10px;
+      display: block;
+    }
+
+    .form-section {
+      margin-top: 10px;
+    }
+
+    .form-section label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-section input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    textarea, input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .close-btn-form {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-bar">
+      <div class="menu-icon" id="menuToggle">&#9776;</div>
+      <div class="logo">
+        <img src="logo.jpg" alt="Virtual Labs Logo" />
+      </div>
+    </div>
+    <div class="orange-line"></div>
+    <h2 align="left" style="color:#4a90e2"><div class="section"><a href="#">Computer Science and Engineering</a> > <a href="/VL---OOPS/index.html">OOPS with Java Programming Lab</a> > <a href="/VL---OOPS/LOE.html">Experiments</a></div></h2>
+    <div class="grey-line"></div>
+  </header>
+
+  <main class="content">
+   <h1 align="center">Operators in Java - I</h1>
+   <hr color="whitesmoke">
+   <p>www.datacamp.com/doc/java/java-operators</p>
+  </main>
+  
+      <!-- Modal Menu -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img src="logo.jpg" alt="Logo" class="modal-logo"/>
+        <span class="close-btn" id="closeModal">&times;</span>
+      </div>
+      <ul class="modal-menu">
+        <li><a href=AO.html>Aim</a></li>
+        <li><a href=theory.html>Theory</a></li>
+        <li><a href=quiz.html>Pretest</a></li>
+        <li><a href=pro.html>Procedure</a></li>
+        <li><a href=sim.html>Simulation</a></li>
+        <li><a href="postt.html">Posttest</a></li>
+        <li><a href=ref.html class="active">References</a></li>
+        <li><a href=feed2.html>Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+   <script src="script.js"></script>
+   <button class="bug-button" onclick="showPopup()"></button>
+
+<div class="popup" id="bugPopup">
+  <div class="popup-header">
+    <img src="VL.jpg" align="left" alt="Bug Icon">
+    <h2>Bug Report</h2>
+    <button class="close-btn" onclick="hidePopup()">×</button>
+  </div>
+  <div class="form-section">
+    <label><p><big><big>Please select the Issues<br></big></big><input type="checkbox">Incorrect Options<br>
+    <input type="checkbox">Incorrect Answer<br>
+    <input type="checkbox">Incorrect Question<br>
+    <input type="checkbox">Page Not Loading<br>
+    <input type="checkbox">Content Not Visible<br>
+    <input type="checkbox">Incorrect Content<br></p></label>
+  </div>
+   <p><big>Please describe your issue</big><br><textarea rows="4" placeholder="Enter description here"></textarea></p>
+  <label><p><big>Please enter your email (Optional)<br></big><input type="email" placeholder="Enter email here for communication (Optional)"></p></label>
+  <div class="buttons">
+    <button class="close-btn-form" onclick="hidePopup()">Close</button>
+    <button class="submit-btn">Submit</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    document.getElementById('bugPopup').style.display = 'block';
+  }
+
+  function hidePopup() {
+    document.getElementById('bugPopup').style.display = 'none';
+  }
+</script>
+</body>
+</html>

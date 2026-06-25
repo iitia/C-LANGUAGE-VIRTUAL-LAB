@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Language Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="menu-bar">
+    <div class="menu-icon" id="menuToggle">&#9776;</div>
+    <div class="logo">
+      <img src="../logo.jpg" alt="Virtual Labs Logo" />
+    </div>
+  </div>
+
+  <div class="orange-line"></div>
+
+  <h2 align="left" style="color:#4a90e2">
+    <div class="section">
+      <a href="#">Computer Science and Engineering</a> >
+      <a href="../index.html">C Language Laboratory</a> >
+      <a href="../LOE.html">Experiments</a>
+    </div>
+  </h2>
+
+  <div class="grey-line"></div>
+</header>
+
+<main class="content">
+  <h1 align="center"> Write a program to create, write, and read data from a text file- Pretest</h1>
+
+  <form id="quizForm">
+
+    <p><strong>Q6. Which header file is required for file handling in C?</strong><br>
+    <label><input type="radio" name="q6" value="a"> stdio.h</label><br>
+    <label><input type="radio" name="q6" value="b"> string.h</label><br>
+    <label><input type="radio" name="q6" value="c"> math.h</label><br>
+    <label><input type="radio" name="q6" value="d"> conio.h</label><br></p>
+
+    <p><strong>Q7. fopen() returns what if file opening fails?</strong><br>
+    <label><input type="radio" name="q7" value="a"> NULL</label><br>
+    <label><input type="radio" name="q7" value="b"> 0</label><br>
+    <label><input type="radio" name="q7" value="c"> -1</label><br>
+    <label><input type="radio" name="q7" value="d"> EOF</label><br></p>
+
+    <p><strong>Q8. Which mode is used to read a file?</strong><br>
+    <label><input type="radio" name="q8" value="a"> "r"</label><br>
+    <label><input type="radio" name="q8" value="b"> "w"</label><br>
+    <label><input type="radio" name="q8" value="c"> "a"</label><br>
+    <label><input type="radio" name="q8" value="d"> "rw+"</label><br></p>
+
+    <p><strong>Q9. Function to close a file?</strong><br>
+    <label><input type="radio" name="q9" value="a"> fclose()</label><br>
+    <label><input type="radio" name="q9" value="b"> fileclose()</label><br>
+    <label><input type="radio" name="q9" value="c"> closefile()</label><br>
+    <label><input type="radio" name="q9" value="d"> endfile()</label><br></p>
+
+    <p><strong>Q10. File handling is used for?</strong><br>
+    <label><input type="radio" name="q10" value="a"> Permanent data storage</label><br>
+    <label><input type="radio" name="q10" value="b"> CPU cache storage</label><br>
+    <label><input type="radio" name="q10" value="c"> RAM increase</label><br>
+    <label><input type="radio" name="q10" value="d"> Compiler optimization</label><br></p>
+
+    <button type="button" onclick="checkAnswersI()">Submit</button>
+
+    <p id="result"></p>
+
+  </form>
+</main>
+
+<script>
+function checkAnswersI() {
+    let score = 0;
+
+    if(document.querySelector('input[name="q6"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q7"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q8"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q9"]:checked')?.value === "a") score++;
+    if(document.querySelector('input[name="q10"]:checked')?.value === "a") score++;
+
+    document.getElementById("result").innerHTML =
+        "Your Score: " + score + "/5";
+}
+</script>
+
+</body>
+</html>

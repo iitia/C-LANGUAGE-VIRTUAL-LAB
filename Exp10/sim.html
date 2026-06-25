@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Handling Simulation</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: linear-gradient(120deg, #0f172a, #1e293b);
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 18px;
+  font-size: 24px;
+  background: #111827;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.box {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 0 10px rgba(0,255,255,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  background: #06b6d4;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #22d3ee;
+  transform: scale(1.05);
+}
+
+.file-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: black;
+  border-left: 5px solid #22c55e;
+  min-height: 80px;
+  white-space: pre-line;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.step {
+  margin: 10px 0;
+  padding: 10px;
+  background: #0ea5e9;
+  color: black;
+  border-radius: 6px;
+  display: none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+📂 File Handling Simulation (Create → Write → Read)
+</header>
+
+<div class="container">
+
+<div class="box">
+<h3>1. Create File</h3>
+<button onclick="createFile()">Create File</button>
+<div id="step1" class="step">✔ File Created: student.txt</div>
+</div>
+
+<div class="box">
+<h3>2. Write Data</h3>
+<textarea id="data" placeholder="Enter student data (Name, Roll, Marks)"></textarea>
+<button onclick="writeFile()">Write to File</button>
+<div id="step2" class="step">✔ Data Written Successfully</div>
+</div>
+
+<div class="box">
+<h3>3. Read File</h3>
+<button onclick="readFile()">Read File</button>
+<div id="step3" class="step">✔ Reading File...</div>
+</div>
+
+<div class="box">
+<h3>📄 File Output</h3>
+<div id="output" class="file-box">File is empty</div>
+</div>
+
+</div>
+
+<script>
+let fileData = "";
+let fileCreated = false;
+
+function createFile() {
+  fileCreated = true;
+  document.getElementById("step1").style.display = "block";
+}
+
+function writeFile() {
+  if(!fileCreated){
+    alert("First create file!");
+    return;
+  }
+
+  fileData = document.getElementById("data").value;
+  document.getElementById("step2").style.display = "block";
+}
+
+function readFile() {
+  if(fileData === ""){
+    alert("No data in file!");
+    return;
+  }
+
+  document.getElementById("step3").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("output").innerText = fileData;
+  }, 1000);
+}
+</script>
+
+</body>
+</html>

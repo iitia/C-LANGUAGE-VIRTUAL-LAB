@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
+.menu-icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logo img {
+  height: 45px;
+}
+
+.orange-line {
+  height: 5px;
+  background-color: orange;
+}
+
+.grey-line {
+  height: 2px;
+  background-color: whitesmoke;
+}
+
+.content {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.content h3 {
+  color: #4a90e2;
+  font-weight: normal;
+  font-family: 'Franklin Gothic Medium', Arial Narrow, Arial, sans-serif;
+}
+
+.content h2 {
+  color: #4a90e2;
+  font-weight: normal;
+}
+
+.content h1 {
+  color: #4a90e2;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content p {
+  line-height: 1.6;
+  text-align: justify;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.content hr {
+  height: 1px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+
+
+button {
+  display: block;
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#result {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 15px;
+  color: #28a745;
+}
+label {
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+
+
+
+
+/* Modal Styles */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 300px;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-logo {
+  height: 30px;
+}
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.modal-menu li {
+  padding: 5px 0;
+}
+
+.modal-menu li a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 500;
+  display: block;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.modal-menu a.active {
+  color: #f26522;
+  font-weight: bold;
+}
+.modal-menu a:active {
+  text-decoration: underline;
+  opacity: 0.8; /* Optional: gives a subtle feedback effect */
+}
+/* Remove mobile tap highlight */
+.modal-menu a {
+  -webkit-tap-highlight-color: transparent; /* for Android/Chrome */
+  outline: none; 
+}
+
+
+
+
+
+code, pre {
+      background-color: #f0f0f0;
+      padding: 5px;
+      display: block;
+      margin: 5px 0;
+      white-space: pre-wrap;
+    }
+
+    .section {
+      margin-left: 20px;
+      }
+
+    strong {
+      color: #000;
+    }
+
+    .note {
+      font-style: italic;
+      margin-top: 10px;
+      display: block;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .dot ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      }
+    .dot ul ul {
+      list-style-type: lower-roman;
+      padding-left: 20px;
+    }
+
+    
+    
+    ul {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #2f94b3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .stars {
+      color: gold;
+      margin-left: 10px;
+    }
+    
+    
+    
+    .message {
+  margin-top: 20px;
+}
+
+.message p {
+  line-height: 2.0;
+}
+
+.message button {
+  margin: 20px 0;
+  padding: 10px 20px;
+  border: 1px solid #2d7c8c;
+  color: #2d7c8c;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+

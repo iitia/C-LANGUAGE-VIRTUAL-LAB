@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.logo img {
+ height: 45px;
+}
+
+.orange-line {
+  height: 5px;
+  background-color: orange;
+}
+
+.grey-line {
+  height: 5px;
+  background-color: whitesmoke;
+}
+
+.content {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.content h2 {
+  color: #4a90e2;
+  font-weight: normal;
+}
+
+.content h1 {
+  color: #4a90e2;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content p {
+  line-height: 1.6;
+  text-align: justify;
+}
+/* Modal Styles */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  width: 300px;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-logo {
+  height: 30px;
+}
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.modal-menu li {
+  padding: 8px 0;
+}
+
+.modal-menu li a {
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 500;
+  display: block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.modal-menu a.active {
+  color: #f26522; /* orange color like in the screenshot */
+  font-weight: bold;
+}
+.modal-menu a:active {
+  text-decoration: underline;
+  opacity: 0.8; /* Optional: gives a subtle feedback effect */
+}
+/* Remove mobile tap highlight */
+.modal-menu a {
+  -webkit-tap-highlight-color: transparent; /* for Android/Chrome */
+  outline: none; /* removes dotted border in Firefox */
+}
+
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+ul ul {
+  list-style-type: circle;
+  margin-left: 20px;
+}
+
+.section{
+  margin-left: 20px;
+}

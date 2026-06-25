@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Operations Simulation</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #4a90e2, #8e44ad);
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #4a90e2;
+}
+
+input {
+  width: 45%;
+  padding: 10px;
+  margin: 10px 5px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #2c6fb2;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f4f4f4;
+  color: black;
+  border-radius: 10px;
+}
+
+.box {
+  padding: 10px;
+  margin: 10px 0;
+  background: #e8f0ff;
+  border-left: 5px solid #4a90e2;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>String Operations Simulation (C Language)</h1>
+
+<input type="text" id="str1" placeholder="Enter String 1">
+<input type="text" id="str2" placeholder="Enter String 2">
+
+<br>
+
+<button onclick="findLength()">Length</button>
+<button onclick="copyString()">Copy</button>
+<button onclick="concatString()">Concatenate</button>
+
+<div class="result" id="output"></div>
+
+</div>
+
+<script>
+function findLength() {
+    let s1 = document.getElementById("str1").value;
+
+    document.getElementById("output").innerHTML =
+        "<div class='box'>Length of String 1: " + s1.length + "</div>" +
+        "<div class='box'>Length of String 2: " + document.getElementById('str2').value.length + "</div>";
+}
+
+function copyString() {
+    let s1 = document.getElementById("str1").value;
+
+    document.getElementById("output").innerHTML =
+        "<div class='box'>Copied String: " + s1 + "</div>";
+}
+
+function concatString() {
+    let s1 = document.getElementById("str1").value;
+    let s2 = document.getElementById("str2").value;
+
+    document.getElementById("output").innerHTML =
+        "<div class='box'>Concatenated String: " + (s1 + s2) + "</div>";
+}
+</script>
+
+</body>
+</html>
