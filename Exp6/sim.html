@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibonacci Recursion Simulator</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#0f172a,#1e3a8a);
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    background:white;
+    width:800px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#2563eb;
+}
+
+.input-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:20px 0;
+}
+
+input{
+    padding:10px;
+    width:180px;
+    font-size:18px;
+    border:2px solid #2563eb;
+    border-radius:10px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.code{
+    background:#111827;
+    color:#22c55e;
+    padding:15px;
+    border-radius:10px;
+    margin-top:15px;
+    font-family:monospace;
+}
+
+#steps{
+    margin-top:20px;
+}
+
+.step{
+    background:#eff6ff;
+    padding:10px;
+    margin:8px 0;
+    border-left:5px solid #2563eb;
+    border-radius:8px;
+    animation:fade .4s ease;
+}
+
+.result{
+    margin-top:20px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:green;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔄 Fibonacci Recursion Simulator</h1>
+
+<div class="input-box">
+    <input type="number" id="num" placeholder="Enter N">
+    <button onclick="simulate()">Run Simulation</button>
+</div>
+
+<div class="code">
+fib(n) = fib(n-1) + fib(n-2)<br>
+fib(0) = 0<br>
+fib(1) = 1
+</div>
+
+<div id="steps"></div>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<script>
+
+function fib(n){
+    if(n<=1) return n;
+    return fib(n-1)+fib(n-2);
+}
+
+function simulate(){
+
+    let n = parseInt(document.getElementById("num").value);
+
+    let steps = document.getElementById("steps");
+    let result = document.getElementById("result");
+
+    steps.innerHTML="";
+    result.innerHTML="";
+
+    if(isNaN(n) || n<0){
+        result.innerHTML="Enter a valid number";
+        result.style.color="red";
+        return;
+    }
+
+    let a=0,b=1;
+
+    steps.innerHTML += `<div class="step">fib(0) = 0</div>`;
+
+    if(n>=1)
+    steps.innerHTML += `<div class="step">fib(1) = 1</div>`;
+
+    for(let i=2;i<=n;i++){
+
+        let c=a+b;
+
+        steps.innerHTML += `
+        <div class="step">
+        fib(${i}) = fib(${i-1}) + fib(${i-2})
+        = ${b} + ${a}
+        = ${c}
+        </div>`;
+
+        a=b;
+        b=c;
+    }
+
+    result.innerHTML =
+    `Nth Fibonacci Number = ${fib(n)}`;
+}
+</script>
+
+</body>
+</html>

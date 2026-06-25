@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Largest Element in Array Simulator</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#0f172a,#2563eb);
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    color:#2563eb;
+}
+
+.input-box{
+    text-align:center;
+    margin:20px 0;
+}
+
+input{
+    width:80%;
+    padding:12px;
+    font-size:16px;
+    border:2px solid #2563eb;
+    border-radius:10px;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.array-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.element{
+    width:60px;
+    height:60px;
+    background:#e0e7ff;
+    border:2px solid #2563eb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:10px;
+    font-weight:bold;
+    font-size:18px;
+    transition:0.5s;
+}
+
+.current{
+    background:#facc15;
+}
+
+.maximum{
+    background:#22c55e;
+    color:white;
+}
+
+.step{
+    margin:10px 0;
+    padding:10px;
+    background:#f8fafc;
+    border-left:5px solid #2563eb;
+    border-radius:5px;
+}
+
+#result{
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:20px;
+    color:green;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🔍 Largest Element in Array Simulator</h1>
+
+<div class="input-box">
+    <p>Enter numbers separated by commas</p>
+    <input type="text" id="arrayInput" placeholder="10, 45, 23, 78, 15">
+    <br>
+    <button onclick="findLargest()">Run Simulation</button>
+</div>
+
+<div id="arrayBox" class="array-box"></div>
+
+<div id="steps"></div>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+function findLargest(){
+
+    const input = document.getElementById("arrayInput").value;
+
+    const arr = input.split(",").map(Number);
+
+    if(arr.length===0 || isNaN(arr[0])){
+        alert("Enter valid numbers.");
+        return;
+    }
+
+    const arrayBox = document.getElementById("arrayBox");
+    const steps = document.getElementById("steps");
+    const result = document.getElementById("result");
+
+    arrayBox.innerHTML="";
+    steps.innerHTML="";
+    result.innerHTML="";
+
+    arr.forEach(num=>{
+        const div=document.createElement("div");
+        div.className="element";
+        div.innerText=num;
+        arrayBox.appendChild(div);
+    });
+
+    const elements=document.querySelectorAll(".element");
+
+    let max=arr[0];
+    elements[0].classList.add("maximum");
+
+    steps.innerHTML += `<div class="step">Assume first element ${max} as the largest.</div>`;
+
+    for(let i=1;i<arr.length;i++){
+
+        elements[i].classList.add("current");
+
+        if(arr[i] > max){
+
+            steps.innerHTML += `<div class="step">${arr[i]} > ${max} → Update largest element.</div>`;
+
+            elements.forEach(e=>e.classList.remove("maximum"));
+
+            max=arr[i];
+
+            elements[i].classList.add("maximum");
+
+        }else{
+
+            steps.innerHTML += `<div class="step">${arr[i]} < ${max} → No change.</div>`;
+        }
+
+        elements[i].classList.remove("current");
+    }
+
+    result.innerHTML = `✅ Largest Element = ${max}`;
+}
+</script>
+
+</body>
+</html>

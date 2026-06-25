@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Language Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-bar">
+      <div class="menu-icon" id="menuToggle">&#9776;</div>
+      <div class="logo">
+        <img src="../logo.jpg" alt="Virtual Labs Logo" />
+      </div>
+    </div>
+    <div class="orange-line"></div>
+    <h2 align="left" style="color:#4a90e2"><div class="section"><a href="#">Computer Science and Engineering</a> > <a href="../index.html">C Language Laboratory</a> > <a href="../LOE.html">Experiments</a></div></h2>
+    <div class="grey-line"></div>
+  </header>
+  <main class="content">
+   <h1 align="center">Determine Whether a Number is Even or Odd Using If-Else Statemen</h1>
+  </main>
+  <div class="section"><h2>Process Concept</h2>
+<h2>Introduction</h2>
+    <p>
+        In C programming, decision-making is performed using conditional statements.
+        The if-else statement allows the program to execute different blocks of code
+        based on whether a condition is true or false. One of the simplest applications
+        of this concept is checking whether a number is even or odd.
+    </p>
+
+    <h2>Objective</h2>
+    <ul>
+        <li>To understand conditional statements in C programming.</li>
+        <li>To use the modulus (%) operator for checking divisibility.</li>
+        <li>To determine whether a given number is even or odd.</li>
+        <li>To implement decision-making logic using if-else.</li>
+        <li>To improve problem-solving skills in programming.</li>
+    </ul>
+
+    <h2>Theory</h2>
+    <p>
+        A number is called <strong>even</strong> if it is divisible by 2 and leaves a remainder of 0.
+        A number is called <strong>odd</strong> if it leaves a remainder of 1 when divided by 2.
+    </p>
+
+    <p>
+        In C programming, the modulus operator (%) is used to find the remainder of a division.
+        By checking the condition <code>num % 2 == 0</code>, we can determine whether a number
+        is even or odd.
+    </p>
+
+    <h3>Logic Used</h3>
+    <ul>
+        <li>If (num % 2 == 0), the number is Even.</li>
+        <li>Else, the number is Odd.</li>
+    </ul>
+
+    <h2>Algorithm</h2>
+    <ol>
+        <li>Start the program.</li>
+        <li>Input a number from the user.</li>
+        <li>Check the condition num % 2 == 0.</li>
+        <li>If true, display "Even Number".</li>
+        <li>Otherwise, display "Odd Number".</li>
+        <li>Stop the program.</li>
+    </ol>
+
+    <h2>Flowchart</h2>
+
+    <pre style="background:#f4f4f4;padding:15px;border-radius:10px;">
+        Start
+          │
+          ▼
+    Input Number (num)
+          │
+          ▼
+    Check: num % 2 == 0 ?
+        ┌───────┴───────┐
+        │               │
+      Yes              No
+        │               │
+        ▼               ▼
+   Print EVEN      Print ODD
+        │               │
+        └───────┬───────┘
+                ▼
+               End
+    </pre>
+
+    <h2>C Programming Concepts Used</h2>
+    <ul>
+        <li>Variables and Data Types</li>
+        <li>Input and Output Functions (scanf, printf)</li>
+        <li>Modulus Operator (%)</li>
+        <li>If-Else Conditional Statement</li>
+        <li>Relational Operators</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <ul>
+        <li>Number classification systems</li>
+        <li>Basic mathematical computations</li>
+        <li>Algorithm development practice</li>
+        <li>Educational programming exercises</li>
+        <li>Logical decision-making systems</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        This experiment demonstrates how decision-making can be implemented in C programming
+        using the if-else statement. It helps students understand how to use logical conditions
+        and arithmetic operators to solve simple real-world problems like checking even or odd numbers.
+    </p>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img src="../logo.jpg" alt="Logo" class="modal-logo"/>
+        <span class="close-btn" id="closeModal">&times;</span>
+      </div>
+      <ul class="modal-menu">
+        <li><a href=AO.html>Aim</a></li>
+        <li><a href=theory.html class="active">Theory</a></li>
+        <li><a href=quiz.html>Pretest</a></li>
+        <li><a href=pro.html>Procedure</a></li>
+        <li><a href=sim.html>Simulation</a></li>
+        <li><a href="postt.html">Posttest</a></li>
+        <li><a href=ref.html>References</a></li>
+        <li><a href=feed2.html>Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

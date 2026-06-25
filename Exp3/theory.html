@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Language Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-bar">
+      <div class="menu-icon" id="menuToggle">&#9776;</div>
+      <div class="logo">
+        <img src="../logo.jpg" alt="Virtual Labs Logo" />
+      </div>
+    </div>
+    <div class="orange-line"></div>
+    <h2 align="left" style="color:#4a90e2"><div class="section"><a href="#">Computer Science and Engineering</a> > <a href="../index.html">C Language Laboratory</a> > <a href="../LOE.html">Experiments</a></div></h2>
+    <div class="grey-line"></div>
+  </header>
+  <main class="content">
+   <h1 align="center">Determine Whether a Number is Even or Odd Using If-Else Statement</h1>
+  </main>
+ <section class="theory-section">
+
+    <h1>Experiment 3: Determine Whether a Number is Even or Odd Using If-Else Statement</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        Conditional statements are used in C programming to make decisions based on
+        specific conditions. One of the simplest applications of decision-making is
+        determining whether a number is even or odd. This experiment uses the
+        <strong>if-else</strong> statement along with the <strong>modulus (%)</strong>
+        operator to classify a number.
+    </p>
+
+    <h2>Objective</h2>
+    <ul>
+        <li>To understand the use of conditional statements in C.</li>
+        <li>To learn the working of the modulus (%) operator.</li>
+        <li>To determine whether a number is even or odd.</li>
+        <li>To develop logical problem-solving skills.</li>
+        <li>To implement decision-making using if-else statements.</li>
+    </ul>
+
+    <h2>Theory</h2>
+    <p>
+        A number is considered <strong>even</strong> if it is completely divisible
+        by 2 and leaves a remainder of 0. A number is considered <strong>odd</strong>
+        if it leaves a remainder of 1 when divided by 2.
+    </p>
+
+    <p>
+        In C programming, the modulus operator (%) is used to obtain the remainder
+        after division. The program checks the condition:
+    </p>
+
+    <pre>
+if(num % 2 == 0)
+    printf("Even");
+else
+    printf("Odd");
+    </pre>
+
+    <p>
+        If the remainder is 0, the number is even; otherwise, it is odd.
+        This concept is widely used in mathematical computations and logical
+        decision-making applications.
+    </p>
+
+    <h2>Algorithm</h2>
+    <ol>
+        <li>Start the program.</li>
+        <li>Input a number from the user.</li>
+        <li>Calculate the remainder using num % 2.</li>
+        <li>If the remainder is 0, display "Even Number".</li>
+        <li>Otherwise, display "Odd Number".</li>
+        <li>Stop the program.</li>
+    </ol>
+
+    <h2>Flowchart</h2>
+
+    <pre style="background:#f4f4f4;padding:15px;border-radius:10px;">
+           ┌─────────┐
+           │  Start  │
+           └────┬────┘
+                │
+                ▼
+       ┌────────────────┐
+       │ Input Number N │
+       └───────┬────────┘
+               │
+               ▼
+      ┌─────────────────┐
+      │ Is N % 2 == 0 ? │
+      └───────┬─────────┘
+              │
+       ┌──────┴──────┐
+       │             │
+      Yes           No
+       │             │
+       ▼             ▼
+ ┌────────────┐ ┌───────────┐
+ │ Print Even │ │ Print Odd │
+ └──────┬─────┘ └─────┬─────┘
+        │             │
+        └──────┬──────┘
+               │
+               ▼
+         ┌────────┐
+         │  Stop  │
+         └────────┘
+    </pre>
+
+    <h2>C Programming Concepts Used</h2>
+    <ul>
+        <li>Variables and Data Types</li>
+        <li>Input and Output Functions</li>
+        <li>Modulus (%) Operator</li>
+        <li>If-Else Statements</li>
+        <li>Relational Operators</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <ul>
+        <li>Number Classification Systems</li>
+        <li>Mathematical Software</li>
+        <li>Data Validation Programs</li>
+        <li>Educational Applications</li>
+        <li>Logical Decision-Making Systems</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        This experiment demonstrates how conditional statements and the modulus
+        operator can be used to determine whether a number is even or odd. It
+        provides a strong foundation for understanding decision-making concepts
+        in C programming.
+    </p>
+
+</section>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img src="../logo.jpg" alt="Logo" class="modal-logo"/>
+        <span class="close-btn" id="closeModal">&times;</span>
+      </div>
+      <ul class="modal-menu">
+        <li><a href=AO.html>Aim</a></li>
+        <li><a href=theory.html class="active">Theory</a></li>
+        <li><a href=quiz.html>Pretest</a></li>
+        <li><a href=pro.html>Procedure</a></li>
+        <li><a href=sim.html>Simulation</a></li>
+        <li><a href="postt.html">Posttest</a></li>
+        <li><a href=ref.html>References</a></li>
+        <li><a href=feed2.html>Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

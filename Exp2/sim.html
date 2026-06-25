@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geometry Explorer - Virtual C Lab</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:1000px;
+    max-width:95%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 0 30px rgba(0,255,255,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.controls{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#0ea5e9;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.main{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.visual-box{
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+}
+
+.shape-area{
+    height:320px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.circle{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:linear-gradient(45deg,#06b6d4,#3b82f6);
+    transition:.5s;
+}
+
+.square{
+    width:150px;
+    height:150px;
+    background:linear-gradient(45deg,#f97316,#ef4444);
+    transition:.5s;
+}
+
+.rectangle{
+    width:220px;
+    height:130px;
+    background:linear-gradient(45deg,#10b981,#22c55e);
+    transition:.5s;
+}
+
+.triangle{
+    width:0;
+    height:0;
+    border-left:90px solid transparent;
+    border-right:90px solid transparent;
+    border-bottom:170px solid #a855f7;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.result{
+    margin-top:20px;
+    background:rgba(255,255,255,0.08);
+    padding:15px;
+    border-radius:15px;
+}
+
+.code-box{
+    background:#0f172a;
+    padding:15px;
+    border-radius:15px;
+    color:#22c55e;
+    margin-top:15px;
+    font-family:monospace;
+    text-align:left;
+}
+
+.steps{
+    margin-top:15px;
+}
+
+.step{
+    padding:8px;
+    margin:5px 0;
+    background:rgba(255,255,255,0.05);
+    border-radius:8px;
+}
+
+@media(max-width:768px){
+    .main{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🚀 Geometry Explorer - Virtual C Lab</h1>
+
+<div class="controls">
+    <button onclick="setShape('circle')">Circle</button>
+    <button onclick="setShape('square')">Square</button>
+    <button onclick="setShape('rectangle')">Rectangle</button>
+    <button onclick="setShape('triangle')">Triangle</button>
+</div>
+
+<div class="main">
+
+<div class="visual-box">
+
+    <h2>Shape Visualization</h2>
+
+    <div class="shape-area">
+        <div id="shape" class="circle"></div>
+    </div>
+
+</div>
+
+<div class="visual-box">
+
+    <h2>Interactive Calculator</h2>
+
+    <div id="inputs">
+        <input type="number" id="radius" placeholder="Enter Radius">
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result" id="result">
+        Select a shape and enter dimensions.
+    </div>
+
+    <div class="code-box" id="code">
+float area = 3.14 * r * r;
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let currentShape = "circle";
+
+function setShape(shape){
+
+    currentShape = shape;
+
+    const shapeDiv = document.getElementById("shape");
+    shapeDiv.className = shape;
+
+    let html = "";
+
+    if(shape=="circle"){
+        html=`<input type="number" id="radius" placeholder="Enter Radius">`;
+    }
+
+    if(shape=="square"){
+        html=`<input type="number" id="side" placeholder="Enter Side">`;
+    }
+
+    if(shape=="rectangle"){
+        html=`
+        <input type="number" id="length" placeholder="Enter Length">
+        <input type="number" id="width" placeholder="Enter Width">
+        `;
+    }
+
+    if(shape=="triangle"){
+        html=`
+        <input type="number" id="base" placeholder="Enter Base">
+        <input type="number" id="height" placeholder="Enter Height">
+        <input type="number" id="side1" placeholder="Enter Side 1">
+        <input type="number" id="side2" placeholder="Enter Side 2">
+        `;
+    }
+
+    document.getElementById("inputs").innerHTML = html;
+}
+
+function calculate(){
+
+let area=0;
+let perimeter=0;
+let code="";
+
+if(currentShape=="circle"){
+
+    let r=parseFloat(document.getElementById("radius").value);
+
+    area=3.14159*r*r;
+    perimeter=2*3.14159*r;
+
+    code=
+`float area = 3.14 * r * r;
+float perimeter = 2 * 3.14 * r;`;
+}
+
+if(currentShape=="square"){
+
+    let s=parseFloat(document.getElementById("side").value);
+
+    area=s*s;
+    perimeter=4*s;
+
+    code=
+`float area = side * side;
+float perimeter = 4 * side;`;
+}
+
+if(currentShape=="rectangle"){
+
+    let l=parseFloat(document.getElementById("length").value);
+    let w=parseFloat(document.getElementById("width").value);
+
+    area=l*w;
+    perimeter=2*(l+w);
+
+    code=
+`float area = length * width;
+float perimeter = 2*(length+width);`;
+}
+
+if(currentShape=="triangle"){
+
+    let b=parseFloat(document.getElementById("base").value);
+    let h=parseFloat(document.getElementById("height").value);
+    let s1=parseFloat(document.getElementById("side1").value);
+    let s2=parseFloat(document.getElementById("side2").value);
+
+    area=0.5*b*h;
+    perimeter=b+s1+s2;
+
+    code=
+`float area = 0.5 * base * height;
+float perimeter = base + side1 + side2;`;
+}
+
+document.getElementById("code").innerText = code;
+
+document.getElementById("result").innerHTML=
+`
+<h3>Results</h3>
+
+<p><strong>Area:</strong> ${area.toFixed(2)}</p>
+<p><strong>Perimeter:</strong> ${perimeter.toFixed(2)}</p>
+
+<div class="steps">
+<div class="step">✅ Step 1: Input Dimensions</div>
+<div class="step">✅ Step 2: Apply Formula</div>
+<div class="step">✅ Step 3: Calculate Area</div>
+<div class="step">✅ Step 4: Calculate Perimeter</div>
+<div class="step">✅ Step 5: Display Result</div>
+</div>
+`;
+}
+
+</script>
+
+</body>
+</html>

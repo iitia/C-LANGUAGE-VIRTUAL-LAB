@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Factorial Function Simulator</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+}
+
+.container{
+    width:700px;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.input-box{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+}
+
+input{
+    padding:12px;
+    width:180px;
+    font-size:18px;
+    border:2px solid #2563eb;
+    border-radius:10px;
+}
+
+button{
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+#steps{
+    margin-top:25px;
+}
+
+.step{
+    background:#eff6ff;
+    padding:12px;
+    margin:8px 0;
+    border-left:5px solid #2563eb;
+    border-radius:8px;
+    animation:fadeIn .4s ease;
+}
+
+.result{
+    margin-top:20px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:green;
+}
+
+.function-box{
+    margin-top:20px;
+    background:#111827;
+    color:#22c55e;
+    padding:15px;
+    border-radius:10px;
+    font-family:monospace;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>🧮 Factorial Using User Defined Function</h1>
+
+<div class="input-box">
+    <input type="number" id="num" placeholder="Enter Number">
+    <button onclick="runSimulation()">Run Simulation</button>
+</div>
+
+<div class="function-box">
+int factorial(int n)<br>
+{<br>
+&nbsp;&nbsp;int fact = 1;<br>
+&nbsp;&nbsp;for(int i=1;i&lt;=n;i++)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fact *= i;<br>
+&nbsp;&nbsp;return fact;<br>
+}
+</div>
+
+<div id="steps"></div>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<script>
+function runSimulation(){
+
+    let n = parseInt(document.getElementById("num").value);
+
+    let steps = document.getElementById("steps");
+    let result = document.getElementById("result");
+
+    steps.innerHTML="";
+    result.innerHTML="";
+
+    if(isNaN(n) || n < 0){
+        result.innerHTML="Enter a valid positive number";
+        result.style.color="red";
+        return;
+    }
+
+    let fact=1;
+
+    for(let i=1;i<=n;i++){
+
+        fact*=i;
+
+        steps.innerHTML += `
+        <div class="step">
+        Step ${i}: fact = ${fact}
+        </div>`;
+    }
+
+    result.innerHTML=`Factorial of ${n} = ${fact}`;
+    result.style.color="green";
+}
+</script>
+
+</body>
+</html>

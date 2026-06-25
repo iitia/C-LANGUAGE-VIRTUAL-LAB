@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Language Laboratory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-bar">
+      <div class="menu-icon" id="menuToggle">&#9776;</div>
+      <div class="logo">
+        <img src="../logo.jpg" alt="Virtual Labs Logo" />
+      </div>
+    </div>
+    <div class="orange-line"></div>
+    <h2 align="left" style="color:#4a90e2"><div class="section"><a href="#">Computer Science and Engineering</a> > <a href="../index.html">C Language Laboratory</a> > <a href="../LOE.html">Experiments</a></div></h2>
+    <div class="grey-line"></div>
+  </header>
+  <main class="content">
+   <h1 align="center">Generate the Multiplication Table of a Number Using Loops</h1>
+  </main>
+ <section class="theory-section">
+
+    <h1>Experiment 4: Generate the Multiplication Table of a Number Using Loops</h1>
+
+    <h2>Introduction</h2>
+    <p>
+        Programming often requires performing the same operation multiple times.
+        Writing separate statements for each repetition makes programs lengthy and
+        difficult to maintain. To overcome this problem, programming languages
+        provide looping constructs that allow a block of code to execute repeatedly.
+        In C programming, loops are widely used for repetitive tasks such as
+        calculations, data processing, pattern generation, and table creation.
+    </p>
+
+    <p>
+        A multiplication table is a sequence of multiples of a given number.
+        Generating a multiplication table is a common programming exercise that
+        helps students understand loops, arithmetic operations, and program flow.
+        This experiment uses a loop to calculate and display the multiplication
+        table of a user-entered number.
+    </p>
+
+    <h2>Objectives</h2>
+    <ul>
+        <li>To understand the concept of loops in C programming.</li>
+        <li>To learn the structure and working of the for loop.</li>
+        <li>To generate the multiplication table of a number.</li>
+        <li>To perform arithmetic operations within a loop.</li>
+        <li>To develop logical thinking and programming skills.</li>
+        <li>To understand iterative execution of statements.</li>
+    </ul>
+
+    <h2>Theory</h2>
+    <p>
+        A loop is a control structure that executes a block of statements repeatedly
+        as long as a specified condition remains true. Loops reduce code redundancy,
+        improve readability, and increase program efficiency. C programming supports
+        three types of loops:
+    </p>
+
+    <ul>
+        <li><strong>for loop</strong></li>
+        <li><strong>while loop</strong></li>
+        <li><strong>do-while loop</strong></li>
+    </ul>
+
+    <p>
+        The <strong>for loop</strong> is particularly useful when the number of
+        iterations is known beforehand. Since a multiplication table generally
+        contains values from 1 to 10, the for loop is the most suitable choice.
+    </p>
+
+    <h3>Structure of a For Loop</h3>
+
+    <pre>
+for(initialization; condition; increment/decrement)
+{
+    // statements
+}
+    </pre>
+
+    <p>
+        The for loop consists of three parts:
+    </p>
+
+    <ul>
+        <li><strong>Initialization:</strong> Sets the starting value of the loop variable.</li>
+        <li><strong>Condition:</strong> Determines whether the loop should continue.</li>
+        <li><strong>Increment/Decrement:</strong> Updates the loop variable after each iteration.</li>
+    </ul>
+
+    <p>
+        In this experiment, the loop variable starts from 1 and continues until it
+        reaches 10. During each iteration, the entered number is multiplied by the
+        current value of the loop variable and displayed as part of the multiplication table.
+    </p>
+
+    <h3>Example</h3>
+
+    <p>
+        If the user enters the number 5, the program generates:
+    </p>
+
+    <pre>
+5 × 1 = 5
+5 × 2 = 10
+5 × 3 = 15
+5 × 4 = 20
+5 × 5 = 25
+5 × 6 = 30
+5 × 7 = 35
+5 × 8 = 40
+5 × 9 = 45
+5 × 10 = 50
+    </pre>
+
+    <p>
+        This process demonstrates how loops automate repetitive calculations,
+        reducing the need for multiple print statements.
+    </p>
+
+    <h2>Algorithm</h2>
+    <ol>
+        <li>Start the program.</li>
+        <li>Accept a number from the user.</li>
+        <li>Initialize the loop variable i = 1.</li>
+        <li>Check whether i is less than or equal to 10.</li>
+        <li>Multiply the entered number by i.</li>
+        <li>Display the multiplication result.</li>
+        <li>Increment i by 1.</li>
+        <li>Repeat steps 4–7 until i becomes greater than 10.</li>
+        <li>Stop the program.</li>
+    </ol>
+
+    <h2>Flowchart</h2>
+
+    <pre style="background:#f4f4f4;padding:15px;border-radius:10px;">
+           ┌─────────┐
+           │  Start  │
+           └────┬────┘
+                │
+                ▼
+      ┌─────────────────┐
+      │ Input Number N  │
+      └───────┬─────────┘
+              │
+              ▼
+            i = 1
+              │
+              ▼
+        ┌────────────┐
+        │  i <= 10 ? │
+        └─────┬──────┘
+              │
+       ┌──────┴──────┐
+       │             │
+      Yes            No
+       │             │
+       ▼             ▼
+ Print N × i       Stop
+       │
+       ▼
+    i = i + 1
+       │
+       └─────────────►
+    </pre>
+
+    <h2>Programming Concepts Used</h2>
+    <ul>
+        <li>For Loop</li>
+        <li>Variables and Data Types</li>
+        <li>Arithmetic Operators</li>
+        <li>Input and Output Functions</li>
+        <li>Control Structures</li>
+        <li>Iteration and Repetition</li>
+    </ul>
+
+    <h2>Advantages of Using Loops</h2>
+    <ul>
+        <li>Reduces code repetition.</li>
+        <li>Improves readability and maintainability.</li>
+        <li>Saves development time.</li>
+        <li>Increases program efficiency.</li>
+        <li>Allows execution of repetitive tasks automatically.</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <ul>
+        <li>Generating multiplication tables.</li>
+        <li>Mathematical computations and calculations.</li>
+        <li>Pattern printing programs.</li>
+        <li>Data processing applications.</li>
+        <li>Scientific and engineering software.</li>
+        <li>Educational programming exercises.</li>
+        <li>Game development and simulations.</li>
+    </ul>
+
+    <h2>Learning Outcomes</h2>
+    <p>
+        After completing this experiment, students will be able to:
+    </p>
+
+    <ul>
+        <li>Understand the concept of iterative execution.</li>
+        <li>Use the for loop effectively in C programs.</li>
+        <li>Generate multiplication tables programmatically.</li>
+        <li>Apply arithmetic operations within loops.</li>
+        <li>Develop efficient solutions for repetitive tasks.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        This experiment demonstrates the practical use of loops in C programming.
+        By generating a multiplication table, students learn how repetitive tasks
+        can be automated using iteration. The experiment strengthens understanding
+        of loop control structures, arithmetic operations, and program flow, which
+        are fundamental concepts for developing efficient and scalable programs.
+    </p>
+
+</section>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img src="../logo.jpg" alt="Logo" class="modal-logo"/>
+        <span class="close-btn" id="closeModal">&times;</span>
+      </div>
+      <ul class="modal-menu">
+        <li><a href=AO.html>Aim</a></li>
+        <li><a href=theory.html class="active">Theory</a></li>
+        <li><a href=quiz.html>Pretest</a></li>
+        <li><a href=pro.html>Procedure</a></li>
+        <li><a href=sim.html>Simulation</a></li>
+        <li><a href="postt.html">Posttest</a></li>
+        <li><a href=ref.html>References</a></li>
+        <li><a href=feed2.html>Feedback</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

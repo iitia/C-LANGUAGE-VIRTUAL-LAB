@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations Simulator</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f6f9;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.1);
+            width:500px;
+        }
+
+        h2{
+            text-align:center;
+            color:#333;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        button{
+            padding:10px 15px;
+            margin:5px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .add{background:#28a745;color:white;}
+        .sub{background:#dc3545;color:white;}
+        .mul{background:#007bff;color:white;}
+        .div{background:#fd7e14;color:white;}
+        .mod{background:#6f42c1;color:white;}
+
+        #result{
+            margin-top:20px;
+            padding:15px;
+            background:#eef2ff;
+            border-radius:10px;
+            font-size:18px;
+        }
+
+        .steps{
+            margin-top:15px;
+            background:#f8f9fa;
+            padding:10px;
+            border-radius:8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Experiment 1: Arithmetic Operations Simulator</h2>
+
+    <input type="number" id="num1" placeholder="Enter First Number">
+
+    <input type="number" id="num2" placeholder="Enter Second Number">
+
+    <div align="center">
+        <button class="add" onclick="calculate('+')">+</button>
+        <button class="sub" onclick="calculate('-')">−</button>
+        <button class="mul" onclick="calculate('*')">×</button>
+        <button class="div" onclick="calculate('/')">÷</button>
+        <button class="mod" onclick="calculate('%')">%</button>
+    </div>
+
+    <div id="result">
+        Result will appear here...
+    </div>
+
+</div>
+
+<script>
+
+function calculate(operator){
+
+    let a = parseFloat(document.getElementById("num1").value);
+    let b = parseFloat(document.getElementById("num2").value);
+
+    if(isNaN(a) || isNaN(b)){
+        document.getElementById("result").innerHTML =
+        "Please enter both numbers.";
+        return;
+    }
+
+    let result;
+    let explanation;
+
+    switch(operator){
+
+        case '+':
+            result = a + b;
+            explanation = `${a} + ${b} = ${result}`;
+            break;
+
+        case '-':
+            result = a - b;
+            explanation = `${a} - ${b} = ${result}`;
+            break;
+
+        case '*':
+            result = a * b;
+            explanation = `${a} × ${b} = ${result}`;
+            break;
+
+        case '/':
+            if(b==0){
+                explanation = "Division by zero is not allowed.";
+            }else{
+                result = a / b;
+                explanation = `${a} ÷ ${b} = ${result}`;
+            }
+            break;
+
+        case '%':
+            result = a % b;
+            explanation = `${a} % ${b} = ${result}`;
+            break;
+    }
+
+    document.getElementById("result").innerHTML =
+    `
+    <h3>Output</h3>
+    <p><strong>${explanation}</strong></p>
+
+    <div class="steps">
+        <h4>Simulation Steps</h4>
+        <p>Step 1: Read Number 1 = ${a}</p>
+        <p>Step 2: Read Number 2 = ${b}</p>
+        <p>Step 3: Apply Operator '${operator}'</p>
+        <p>Step 4: Compute Result</p>
+        <p>Step 5: Display Output = ${result}</p>
+    </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>

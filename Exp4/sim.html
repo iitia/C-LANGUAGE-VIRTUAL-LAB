@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplication Table Simulator</title>
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:500px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#2a5298;
+}
+
+input{
+    padding:10px;
+    width:150px;
+    font-size:18px;
+    text-align:center;
+}
+
+button{
+    padding:10px 20px;
+    background:#2a5298;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+button:hover{
+    background:#1e3c72;
+}
+
+#tableOutput{
+    margin-top:20px;
+    text-align:left;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.line{
+    opacity:0;
+    transform:translateX(-20px);
+    animation:showLine 0.4s forwards;
+}
+
+@keyframes showLine{
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>📚 Multiplication Table Simulator</h1>
+
+    <input type="number" id="number" placeholder="Enter Number">
+    <button onclick="generateTable()">Generate</button>
+
+    <div id="tableOutput"></div>
+</div>
+
+<script>
+function generateTable(){
+
+    let num = document.getElementById("number").value;
+    let output = document.getElementById("tableOutput");
+
+    output.innerHTML = "";
+
+    if(num === ""){
+        output.innerHTML = "Please enter a number.";
+        return;
+    }
+
+    for(let i=1;i<=10;i++){
+
+        setTimeout(()=>{
+            output.innerHTML +=
+            `<div class="line">
+            ${num} × ${i} = ${num*i}
+            </div>`;
+        }, i*300);
+
+    }
+}
+</script>
+
+</body>
+</html>
